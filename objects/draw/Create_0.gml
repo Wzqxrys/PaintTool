@@ -1,5 +1,6 @@
 /// @description Set Up Main render object
-// Made by Wzqxrys
+// Made by Wzqxrys 
+// twitch.tv/wizquix
 
    w_width = 960;
    w_height = 540;
@@ -8,6 +9,10 @@
    surf_painting = surface_create(w_width, w_height);
    //Do i draw check
    surf_painting_update = true;
+	
+	//Surface for overlay
+	surf_overlay = surface_create(w_width, w_height);
+	surf_overlay_update = true;
    
    //Lets add some color variants
    // Color ID = 0, 1, 2
@@ -39,3 +44,16 @@
    m_previous_x = 0;
    m_previous_y = 0;
    show_help = true;
+	help_string = 
+	"Hold LEFT MOUSE to Paint\n" + 
+	"Press RIGHT MOUSE to Clear Canvas\n" + 
+	"Scroll MOUSE WHEEL to Change Color\n" +	
+	"UP ARROW to make Brush Bigger\n" +	
+	"DOWN ARROW to make Brush Smaller\n" +	
+	"LEFT & RIGHT to cycle modes\n" + 
+	"Press ENTER to Save\n" + 
+	"Press 'H' to Hide This";
+   
+   //Paint Modes
+   enum ePaint { Brush, Eraser, size };
+   paint_tool = ePaint.Brush;

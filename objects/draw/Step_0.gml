@@ -67,3 +67,14 @@
    if keyboard_check_pressed(ord("H")) {
    	show_help = !show_help;
    }
+   
+   //Change Tool
+   if keyboard_check_pressed(vk_right) {
+	   paint_tool = (paint_tool + 1) mod ePaint.size;
+   } else if keyboard_check_pressed(vk_left) {
+	   paint_tool -= 1
+	   if paint_tool < 0 {
+			paint_tool += ePaint.size;
+	   }
+   }
+   
